@@ -1,323 +1,264 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jinsho U Varkey — Interior Designer & 3D Visualizer</title>
-  <meta name="description" content="Portfolio of Jinsho U Varkey, Interior Designer & 3D Visualizer based in Wayanad, Kerala, India." />
-  <meta name="theme-color" content="#2563EB" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Portfolio of Jinsho U Varkey, Interior Designer & 3D Visualizer based in Wayanad, Kerala, India. Explore projects, skills, experience, and contact." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Animated gradient background + floating shapes -->
+  <div class="bg-gradient"></div>
+  <div class="floating-shape s1"></div>
+  <div class="floating-shape s2"></div>
+  <div class="floating-shape s3"></div>
 
-  <header class="site-header" id="top">
-    <nav class="nav">
-      <div class="brand">
-        <span class="brand-logo" aria-hidden="true">J</span>
-        <span class="brand-text">
-          <strong>Jinsho</strong> U Varkey
-          <small>Interior Designer & 3D Visualizer</small>
-        </span>
-      </div>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-      </button>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#about" data-scroll>About</a></li>
-        <li><a href="#experience" data-scroll>Experience</a></li>
-        <li><a href="#projects" data-scroll>Projects</a></li>
-        <li><a href="#skills" data-scroll>Skills</a></li>
-        <li><a href="#gallery" data-scroll>Gallery</a></li>
-        <li><a href="#contact" class="btn btn-amber" data-scroll>Contact</a></li>
-      </ul>
-    </nav>
-
-    <section class="hero" role="banner" aria-label="Landing hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Wayanad, Kerala, India</p>
-          <h1>
-            Designing spaces that feel like
-            <span class="gradient-text">home</span>.
-          </h1>
-          <p class="subtitle">
-            I’m <strong>Jinsho U Varkey</strong>, an Interior Designer & 3D Visualizer crafting functional, elegant interiors and immersive visual experiences.
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary" data-scroll>View Projects</a>
-            <a href="#contact" class="btn btn-glass" data-scroll>Get in Touch</a>
-          </div>
-          <ul class="hero-meta">
-            <li><span class="dot" aria-hidden="true"></span> Interior Design</li>
-            <li><span class="dot" aria-hidden="true"></span> 3D Visualization</li>
-            <li><span class="dot" aria-hidden="true"></span> Concept to Delivery</li>
-          </ul>
-        </div>
-        <div class="hero-figure">
-          <div class="card glass figure-card">
-            <div class="figure-ring" aria-hidden="true"></div>
-            <img src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?q=80&w=1200&auto=format&fit=crop" alt="Designer portrait placeholder" class="figure-img" />
-            <div class="badge">
-              <span class="badge-dot"></span>
-              Available for freelance
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="#about" class="scroll-indicator" aria-label="Scroll to About" data-scroll>
-        <span class="mouse" aria-hidden="true"><span class="wheel"></span></span>
-        <span class="scroll-text">Scroll</span>
+  <!-- Navigation -->
+  <header class="navbar glass-blur" id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#hero" aria-label="Home">
+        <span class="dot"></span>
+        <span>Jinsho</span><span class="accent">V</span>
       </a>
-    </section>
+      <nav>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact" class="btn btn-accent">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <section id="about" class="section about">
-      <div class="container grid-2">
-        <div class="card glass lift reveal">
-          <h2>About</h2>
+  <!-- Hero -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-content">
+      <div class="hero-text reveal">
+        <h1 class="glow">Interior Designer & 3D Visualizer</h1>
+        <p class="lead">
+          I craft immersive interior spaces and high-fidelity 3D visuals for residential and commercial projects.
+          Based in Wayanad, Kerala, India.
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="hero-meta">
+          <span class="pill">3D Renders</span>
+          <span class="pill">Interior Concepts</span>
+          <span class="pill">Visualization</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="avatar glass-card">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="Designer workspace" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>Passionate about blending form and function to create spaces that feel as good as they look.</p>
+      </div>
+      <div class="grid two">
+        <div class="glass-card reveal">
+          <h3>Profile</h3>
           <p>
-            I’m an interior designer and 3D visualizer specializing in residential and commercial spaces. I combine a user-centered approach with precise material and lighting studies to deliver designs that are both beautiful and practical.
+            I’m Jinsho U Varkey, an Interior Designer & 3D Visualizer with a keen eye for detail and a deep passion
+            for photorealistic renderings. I collaborate with clients to translate ideas into compelling spatial stories.
           </p>
-          <ul class="key-points">
-            <li>5+ years experience in interior design</li>
-            <li>Photorealistic rendering & walkthroughs</li>
-            <li>Detail-driven, budget-conscious execution</li>
+        </div>
+        <div class="glass-card reveal">
+          <h3>Highlights</h3>
+          <ul class="list">
+            <li>High-quality 3D renders using industry-standard tools</li>
+            <li>Client-centric design approach</li>
+            <li>Experience across residential and commercial projects</li>
           </ul>
         </div>
-        <div class="stats reveal">
-          <div class="stat-card">
-            <div class="stat-number">45+</div>
-            <div class="stat-label">Projects Delivered</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section parallax">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>A snapshot of my professional journey.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <h4>Senior 3D Visualizer</h4>
+            <span class="muted">2022 — Present</span>
+            <p>Leading visualization workflows, delivering photorealistic interiors, and mentoring junior artists.</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">12</div>
-            <div class="stat-label">Awards & Mentions</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">3D Walkthroughs</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <h4>Interior Designer</h4>
+            <span class="muted">2019 — 2022</span>
+            <p>End-to-end design from concept to client handoff for residential spaces and boutique commercial interiors.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card card">
-              <header class="timeline-header">
-                <h3>Senior Interior Designer</h3>
-                <span class="period">2022 — Present</span>
-              </header>
-              <p>
-                Lead design strategy for residential and boutique hospitality projects, from concept and material boards to site execution and client handover.
-              </p>
-              <ul>
-                <li>Directed 3D visualization pipeline for faster approvals</li>
-                <li>Standardized FF&E documentation and vendor coordination</li>
-                <li>Mentored junior designers on detailing & rendering</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card card">
-              <header class="timeline-header">
-                <h3>3D Visualizer</h3>
-                <span class="period">2019 — 2022</span>
-              </header>
-              <p>
-                Produced photorealistic renders and animations for interior and architectural proposals focusing on lighting and material realism.
-              </p>
-              <ul>
-                <li>Delivered 200+ renders across 30+ projects</li>
-                <li>Optimized render times by 35% with smart scene setups</li>
-              </ul>
-            </div>
-          </article>
-        </div>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Selected work showcasing concept, detailing, and visualization.</p>
       </div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-          <article class="project-card reveal" data-project="p1">
-            <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1600585154340-1e4ce9a78f7e?q=80&w=1200&auto=format&fit=crop" alt="Modern living room - Project Aurora" />
-              <button class="quick-view" data-project-open="p1" aria-label="Open Project Aurora">Quick view</button>
-            </div>
-            <div class="project-body">
-              <h3>Project Aurora</h3>
-              <p>Warm minimal apartment with oak textures, soft lighting, and hidden storage solutions.</p>
-              <div class="tags">
-                <span>Residential</span><span>Lighting</span><span>3D</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-project="p2">
-            <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=1200&auto=format&fit=crop" alt="Boutique cafe interior - Project Ember" />
-              <button class="quick-view" data-project-open="p2" aria-label="Open Project Ember">Quick view</button>
-            </div>
-            <div class="project-body">
-              <h3>Project Ember</h3>
-              <p>Boutique cafe with amber accents, custom seating, and ambient mood lighting.</p>
-              <div class="tags">
-                <span>Hospitality</span><span>Branding</span><span>Visualization</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-project="p3">
-            <div class="project-media">
-              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1200&auto=format&fit=crop" alt="Office workspace - Project Tidal" />
-              <button class="quick-view" data-project-open="p3" aria-label="Open Project Tidal">Quick view</button>
-            </div>
-            <div class="project-body">
-              <h3>Project Tidal</h3>
-              <p>Biophilic workspace with flexible zones and acoustic comfort to boost productivity.</p>
-              <div class="tags">
-                <span>Commercial</span><span>Biophilic</span><span>Ergonomics</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Project Modals -->
-      <div class="modal-backdrop" data-modal id="modal-p1" aria-hidden="true" aria-labelledby="modal-p1-title" role="dialog">
-        <div class="modal" role="document">
-          <button class="modal-close" data-modal-close aria-label="Close modal">×</button>
-          <h3 id="modal-p1-title">Project Aurora</h3>
-          <p>Warm minimal apartment with an emphasis on natural materials, layered lighting, and efficient storage. Deliverables included layout, material board, 3D renders, and execution drawings.</p>
-          <div class="modal-gallery">
-            <img src="https://images.unsplash.com/photo-1565180967334-06df3fb3f1b0?q=80&w=1200&auto=format&fit=crop" alt="Aurora - living room render" />
-            <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Aurora - bedroom render" />
-            <img src="https://images.unsplash.com/photo-1616596878573-9b1b9d2dba4b?q=80&w=1200&auto=format&fit=crop" alt="Aurora - kitchen render" />
+      <div class="grid three">
+        <article class="project-card glass-card reveal" data-modal="modal-1">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1616596878103-9e5b5c070a33?q=80&w=800&auto=format&fit=crop" alt="Modern living room" />
           </div>
+          <div class="project-info">
+            <h3>Warm Modern Living</h3>
+            <p>Calm neutrals, warm wood, and modern accents.</p>
+          </div>
+        </article>
+        <article class="project-card glass-card reveal" data-modal="modal-2">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop" alt="Work studio" />
+          </div>
+          <div class="project-info">
+            <h3>Creative Studio</h3>
+            <p>Functional workspace with vibrant energy.</p>
+          </div>
+        </article>
+        <article class="project-card glass-card reveal" data-modal="modal-3">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1582582429413-00a45a6d62e1?q=80&w=800&auto=format&fit=crop" alt="Minimal kitchen" />
+          </div>
+          <div class="project-info">
+            <h3>Minimal Kitchen</h3>
+            <p>Clean lines with subtle texture and light.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-1" class="modal" aria-hidden="true">
+      <div class="modal-dialog glass-card">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img src="https://images.unsplash.com/photo-1616596878103-9e5b5c070a33?q=80&w=1600&auto=format&fit=crop" alt="Project detail" />
+        <h3>Warm Modern Living</h3>
+        <p>Layered materials and lighting to create a cozy yet modern living room.</p>
+      </div>
+    </div>
+    <div id="modal-2" class="modal" aria-hidden="true">
+      <div class="modal-dialog glass-card">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop" alt="Project detail" />
+        <h3>Creative Studio</h3>
+        <p>Vibrant, functional, and inspirational studio environment for daily productivity.</p>
+      </div>
+    </div>
+    <div id="modal-3" class="modal" aria-hidden="true">
+      <div class="modal-dialog glass-card">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <img src="https://images.unsplash.com/photo-1582582429413-00a45a6d62e1?q=80&w=1600&auto=format&fit=crop" alt="Project detail" />
+        <h3>Minimal Kitchen</h3>
+        <p>Monochrome palette with strategic highlights and soft under-cabinet lighting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Tools and capabilities that bring designs to life.</p>
+      </div>
+      <div class="chip-row reveal">
+        <span class="chip">3ds Max</span>
+        <span class="chip">V-Ray</span>
+        <span class="chip">SketchUp</span>
+        <span class="chip">AutoCAD</span>
+        <span class="chip">Photoshop</span>
+        <span class="chip">Lumion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section parallax">
+    <div class="container">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <p>Snapshots from featured visualizations.</p>
+      </div>
+      <div class="masonry">
+        <img class="m-item reveal" src="https://images.unsplash.com/photo-1598300183371-cf3a7f389b84?q=80&w=800&auto=format&fit=crop" alt="Gallery item" />
+        <img class="m-item reveal" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=800&auto=format&fit=crop" alt="Gallery item" />
+        <img class="m-item reveal" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Gallery item" />
+        <img class="m-item reveal" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=800&auto=format&fit=crop" alt="Gallery item" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Let’s collaborate. Reach out for projects or opportunities.</p>
+      </div>
+      <form class="contact-form glass-card reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Email address" required />
         </div>
-      </div>
-
-      <div class="modal-backdrop" data-modal id="modal-p2" aria-hidden="true" aria-labelledby="modal-p2-title" role="dialog">
-        <div class="modal" role="document">
-          <button class="modal-close" data-modal-close aria-label="Close modal">×</button>
-          <h3 id="modal-p2-title">Project Ember</h3>
-          <p>A cozy cafe design with amber accent lighting, custom furniture, and a visual identity carried through materials and finishes.</p>
-          <div class="modal-gallery">
-            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=1200&auto=format&fit=crop" alt="Ember - counter area" />
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop" alt="Ember - seating" />
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop" alt="Ember - ambiance" />
-          </div>
+        <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary magnetic">Send Message</button>
+          <span class="form-status" id="formStatus" aria-live="polite"></span>
         </div>
+      </form>
+      <div class="contact-meta reveal">
+        <a href="mailto:hello@example.com" class="link glow-underline">hello@example.com</a>
+        <span class="sep">•</span>
+        <a href="https://wa.me/0000000000" target="_blank" rel="noreferrer" class="link glow-underline">WhatsApp</a>
+        <span class="sep">•</span>
+        <a href="#" class="link glow-underline">Download Resume</a>
       </div>
+    </div>
+  </section>
 
-      <div class="modal-backdrop" data-modal id="modal-p3" aria-hidden="true" aria-labelledby="modal-p3-title" role="dialog">
-        <div class="modal" role="document">
-          <button class="modal-close" data-modal-close aria-label="Close modal">×</button>
-          <h3 id="modal-p3-title">Project Tidal</h3>
-          <p>Modular office concept integrating natural greenery, adjustable lighting, and acoustic zoning for collaborative and focused work.</p>
-          <div class="modal-gallery">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" alt="Tidal - open office" />
-            <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?q=80&w=1200&auto=format&fit=crop" alt="Tidal - lounge" />
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop" alt="Tidal - meeting room" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <ul class="skill-list">
-          <li class="skill reveal"><span>Interior Space Planning</span><div class="meter"><span style="width: 92%"></span></div></li>
-          <li class="skill reveal"><span>Material & Lighting</span><div class="meter"><span style="width: 88%"></span></div></li>
-          <li class="skill reveal"><span>3D Modeling & Rendering</span><div class="meter"><span style="width: 94%"></span></div></li>
-          <li class="skill reveal"><span>Visualization & Walkthroughs</span><div class="meter"><span style="width: 90%"></span></div></li>
-          <li class="skill reveal"><span>Project Coordination</span><div class="meter"><span style="width: 86%"></span></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery">
-      <div class="container">
-        <h2 class="section-title">Gallery</h2>
-        <div class="masonry">
-          <figure class="tile reveal"><img src="https://images.unsplash.com/photo-1505692952047-1a78307da8b4?q=80&w=1200&auto=format&fit=crop" alt="Warm living space" /></figure>
-          <figure class="tile reveal tall"><img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1200&auto=format&fit=crop" alt="Stairwell with light" /></figure>
-          <figure class="tile reveal wide"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1600&auto=format&fit=crop" alt="Modern kitchen" /></figure>
-          <figure class="tile reveal"><img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop" alt="Cozy bedroom" /></figure>
-          <figure class="tile reveal"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08f?q=80&w=1200&auto=format&fit=crop" alt="Workspace minimalism" /></figure>
-          <figure class="tile reveal wide"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop" alt="Ambient lighting" /></figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="container grid-2">
-        <div class="card glass lift reveal">
-          <h2>Contact</h2>
-          <p>Let’s discuss your project or collaboration opportunities. I’m currently available for select freelance projects.</p>
-          <ul class="contact-list">
-            <li><span class="icon" aria-hidden="true">📍</span> Wayanad, Kerala, India</li>
-            <li><span class="icon" aria-hidden="true">✉️</span> hello@jinsho.example</li>
-            <li><span class="icon" aria-hidden="true">📞</span> +91 98765 43210</li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#" aria-label="Download Resume">Download Resume</a>
-            <a class="btn btn-glass" href="#projects" data-scroll>See Work</a>
-          </div>
-        </div>
-        <form class="contact-form card reveal" novalidate>
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-          </div>
-          <button class="btn btn-amber" type="submit">Send Message</button>
-          <p class="form-note">This is a demo form. Hook up your backend or email service.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer class="footer">
+    <div class="container small">
       <p>© <span id="year"></span> Jinsho U Varkey. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="#top" data-scroll>Back to top</a></li>
-        <li><a href="#projects" data-scroll>Projects</a></li>
-        <li><a href="#contact" data-scroll>Contact</a></li>
-      </ul>
     </div>
   </footer>
 
-  <script src="/script.js" defer></script>
-  <div id="root" hidden></div>
+  <!-- Scripts -->
+  <script src="./script.js"></script>
 </body>
 </html>

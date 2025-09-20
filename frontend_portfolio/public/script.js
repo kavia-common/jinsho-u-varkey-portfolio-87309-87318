@@ -1,113 +1,109 @@
-(function(){
+(function () {
   'use strict';
 
-  // Year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Smooth scrolling for anchor links with [data-scroll]
-  const scrollLinks = document.querySelectorAll('[data-scroll]');
-  const smoothScroll = (e) => {
-    const href = e.currentTarget.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target){
-      const offset = document.querySelector('.nav')?.offsetHeight || 0;
-      const top = target.getBoundingClientRect().top + window.scrollY - (offset + 8);
-      window.scrollTo({ top, behavior: 'smooth' });
-      closeMenu();
-    }
-  };
-  scrollLinks.forEach(a => a.addEventListener('click', smoothScroll));
+  // Helpers
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   // Mobile nav toggle
-  const toggleBtn = document.querySelector('.nav-toggle');
-  const menu = document.getElementById('nav-menu');
-  function openMenu(){
-    menu.classList.add('open');
-    toggleBtn.setAttribute('aria-expanded','true');
-    toggleBtn.setAttribute('aria-label','Close menu');
+  const navToggle = $('.nav-toggle');
+  const navLinks = $('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
   }
-  function closeMenu(){
-    menu.classList.remove('open');
-    toggleBtn.setAttribute('aria-expanded','false');
-    toggleBtn.setAttribute('aria-label','Open menu');
-  }
-  toggleBtn?.addEventListener('click', () => {
-    menu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-  document.addEventListener('click', (e)=>{
-    if (!menu || !toggleBtn) return;
-    if (menu.classList.contains('open')){
-      const within = menu.contains(e.target) || toggleBtn.contains(e.target);
-      if (!within) closeMenu();
-    }
+
+  // Smooth scroll for anchor links
+  $$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      try {
+        if (id && id.startsWith('#') && $(id)) {
+          e.preventDefault();
+          $(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          navLinks?.classList.remove('open');
+          navToggle?.setAttribute('aria-expanded', 'false');
+        }
+      } catch(_) {}
+    });
   });
 
-  // Reveal on scroll using IntersectionObserver
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if (entry.isIntersecting){
-        entry.target.classList.add('visible');
+  // Magnetic button hover effect
+  $$('.magnetic').forEach(btn => {
+    btn.addEventListener('pointermove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      btn.style.setProperty('--mx', `${x}px`);
+      btn.style.setProperty('--my', `${y}px`);
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = $$('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
   revealEls.forEach(el => io.observe(el));
 
-  // Project Modals
-  const modalMap = {
-    p1: document.getElementById('modal-p1'),
-    p2: document.getElementById('modal-p2'),
-    p3: document.getElementById('modal-p3'),
-  };
-  function openModal(id){
-    const m = modalMap[id];
+  // Parallax light touch for sections marked .parallax
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || window.pageYOffset;
+    $$('.parallax').forEach((sec, idx) => {
+      sec.style.transform = `translateY(${(y * 0.02) * (idx % 2 === 0 ? 1 : -1)}px)`;
+    });
+  }, { passive: true });
+
+  // Project modals
+  const openModal = (id) => {
+    const m = $(id);
     if (!m) return;
     m.classList.add('active');
     m.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModalByEl(el){
-    el.classList.remove('active');
-    el.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-  document.querySelectorAll('[data-project-open]').forEach(btn=>{
-    btn.addEventListener('click', (e)=> {
-      const id = e.currentTarget.getAttribute('data-project-open');
-      openModal(id);
+  };
+  const closeModal = (m) => {
+    m.classList.remove('active');
+    m.setAttribute('aria-hidden', 'true');
+  };
+  $$('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.getAttribute('data-modal');
+      if (id) openModal(`#${id}`);
     });
   });
-  document.querySelectorAll('[data-modal]').forEach(backdrop=>{
-    backdrop.addEventListener('click', (e)=>{
-      const isBackdrop = e.target === e.currentTarget;
-      if (isBackdrop) closeModalByEl(e.currentTarget);
+  $$('.modal').forEach(m => {
+    m.addEventListener('click', (e) => {
+      if (e.target === m || e.target.classList.contains('modal-close')) {
+        closeModal(m);
+      }
     });
-    backdrop.querySelectorAll('[data-modal-close]').forEach(close=>{
-      close.addEventListener('click', ()=> closeModalByEl(backdrop));
-    });
-    // ESC key to close
-    backdrop.addEventListener('keydown', (e)=>{
-      if (e.key === 'Escape') closeModalByEl(backdrop);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && m.classList.contains('active')) closeModal(m);
     });
   });
 
-  // Demo form handler
-  const form = document.querySelector('.contact-form');
-  form?.addEventListener('submit', (e)=>{
+  // Contact form mock submission
+  const form = $('#contactForm');
+  const status = $('#formStatus');
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name');
-    const email = data.get('email');
-    const message = data.get('message');
-    if(!name || !email || !message){
-      alert('Please fill out all fields.');
-      return;
-    }
-    // Simulate sending
-    form.reset();
-    alert('Thanks! This is a demo. Wire this form to your backend/email service.');
+    status.textContent = 'Sending...';
+    setTimeout(() => {
+      status.textContent = 'Thanks! I will get back to you shortly.';
+      form.reset();
+      setTimeout(() => status.textContent = '', 4000);
+    }, 800);
   });
+
+  // Current year
+  const yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 })();
